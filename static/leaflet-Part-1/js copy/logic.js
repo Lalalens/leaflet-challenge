@@ -20,6 +20,33 @@ function createMap(earthquakeLayer) {
     L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(map);
+    
+     // Create the legend
+     let legend = L.control({ position: "bottomright" });
+
+     legend.onAdd = function() {
+         let div = L.DomUtil.create("div", "info legend");
+         let depths = [-10, 10, 30, 50, 70, 90];  // Adjust these values to match those in your getColor function
+         let colors = [
+             "lightgreen",
+             "yellow",
+             "gold",
+             "orange",
+             "darkorange",
+             "red"
+         ];
+ 
+         // loop through our intervals and generate a label with a colored square for each interval
+         for (let i = 0; i < depths.length; i++) {
+             div.innerHTML +=
+             '<i style="background:' + colors[i] + '; width: 10px; height: 10px; display: inline-block;"></i> ' +
+             depths[i] + (depths[i + 1] ? '&ndash;' + depths[i + 1] + '<br>' : '+');
+         }
+ 
+         return div;
+     };
+ 
+     legend.addTo(map);
 }
 
 function createMarkers(response) {
