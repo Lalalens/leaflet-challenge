@@ -15,6 +15,7 @@ This project is about developing an innovative tool that will allow USGS to visu
 3. **Implementing Informational Popups**: I will enhance user interaction with the map by implementing popups that reveal more details about each earthquake when its associated marker is clicked.
 
 4. **Incorporating a Legend**: To provide context for the map data, I will design a legend. This will help viewers understand what the various sizes and colors of the markers represent.
+
 ![Screenshot 2023-07-19 at 1 10 47 PM](https://github.com/Lalalens/leaflet-challenge/assets/127805883/e17c6768-8222-4598-91b3-19fa78e76e79)
 
 
